@@ -75,11 +75,10 @@ validate_flags:
 #################################################################################
 
 .PHONY: build
-build: validate_flags
 build: export DOCKER_BUILDKIT=1# Dockerfile uses Docker BuildKit features for performance
 build: LATEST_IMG = $(DOCKER_REPO):latest
 ## Build docker container 
-build:
+build: validate_flags
 	docker build --tag $(IMG) .
 	@echo Built $(IMG)
 	@if ! [ "$(TAG)" = latest ]; then \
@@ -116,7 +115,7 @@ generate-config: export ENV_DIR := /home/jovyan/.user_conda_envs/
 generate-config: export FASTAI_BOOK_ENV :=fastbook
 generate-config: export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
 ## Generate JupyterHub Helm chart configuration file 
-generate-config: 
+generate-config: validate_flags
 	export CONFIG_FILEPATH=$(CONFIG_FILEPATH); \
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
