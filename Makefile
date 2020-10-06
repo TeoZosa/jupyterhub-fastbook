@@ -116,7 +116,6 @@ generate-config: export FASTAI_BOOK_ENV :=fastbook
 generate-config: export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
 ## Generate JupyterHub Helm chart configuration file 
 generate-config: validate_req_env_vars
-	export CONFIG_FILEPATH=$(CONFIG_FILEPATH); \
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
 	source .env; \
