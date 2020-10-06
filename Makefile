@@ -90,7 +90,7 @@ build:
 .PHONY: push
 ## Push image to Docker Hub container registry 
 push: validate_flags
-	docker push "${DOCKER_REPO}:${TAG}"
+	docker push "$(IMG)"
 	@echo Exported $(DOCKER_REPO) with  :$(TAG) tags \
 		to Docker Hub image registry
 
