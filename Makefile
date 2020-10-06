@@ -41,7 +41,7 @@ endif
 TAG := $(shell date +v%Y%m%d)-$(GIT_VERSION)
 IMG = $(DOCKER_REPO):$(TAG)
 
-CONFIG_FILEPATH := config.yaml
+CONFIG_FILE := config.yaml
 
 
 #################################################################################
@@ -107,7 +107,7 @@ else
 	  helm upgrade --install $(RELEASE) jupyterhub/jupyterhub \
 	  --namespace "$(NAMESPACE)" \
 	  --version="$(VER)" \
-	  --values "$(CONFIG_FILEPATH)" \
+	  --values "$(CONFIG_FILE)" \
 	  --timeout 10m0s # Wait for pulling of large container images
 endif
 
@@ -119,7 +119,7 @@ generate-config: validate_req_env_vars
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
 	source .env; \
-	envsubst <$(PROJECT_DIR)/$(TEMPLATE_FILEPATH) >$(PROJECT_DIR)/$(CONFIG_FILEPATH)
+	envsubst <$(PROJECT_DIR)/$(TEMPLATE_FILEPATH) >$(PROJECT_DIR)/$(CONFIG_FILE)
 
 
 #################################################################################
