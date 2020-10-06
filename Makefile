@@ -111,6 +111,7 @@ else
 	  --timeout 10m0s # Wait for pulling of large container images
 endif
 
+include .env
 $(CONFIG_FILE): export ENV_DIR := /home/jovyan/.user_conda_envs/
 $(CONFIG_FILE): export FASTAI_BOOK_ENV :=fastbook
 $(CONFIG_FILE): export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
@@ -118,7 +119,6 @@ $(CONFIG_FILE): export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
 $(CONFIG_FILE): validate_req_env_vars
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
-	source .env; \
 	envsubst <$(PROJECT_DIR)/$(TEMPLATE_FILEPATH) >$(PROJECT_DIR)/$(CONFIG_FILE)
 
 
