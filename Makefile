@@ -75,10 +75,10 @@ validate_req_env_vars:
 #################################################################################
 
 .PHONY: build
+## Build docker container 
 build: export DOCKER_BUILDKIT=1# Dockerfile uses Docker BuildKit features for performance
 build: LATEST_IMG = $(DOCKER_REPO):latest
 build: TARGET_SPECIFIC_REQ_ENV_VARS := DOCKER_BUILDKIT LATEST_IMG # Fail if not defined
-## Build docker container 
 build: validate_req_env_vars
 	docker build --tag $(IMG) .
 	@echo Built $(IMG)
@@ -95,11 +95,11 @@ push: validate_req_env_vars
 		to Docker Hub image registry
 
 .PHONY: deploy
+## Deploy JupyterHub to your Kubernetes cluster
 deploy: RELEASE := jhub
 deploy: NAMESPACE := jhub
 deploy: VER := 0.9.1
 deploy: TARGET_SPECIFIC_REQ_ENV_VARS := RELEASE NAMESPACE VER # Fail if not defined 
-## Deploy JupyterHub to your Kubernetes cluster
 deploy: validate_req_env_vars $(CONFIG_FILE) 
 ifeq ($(! command -v helm &> /dev/null),)
 	@echo "helm could not be found!"
@@ -114,11 +114,11 @@ else
 endif
 
 include .env
+## Generate JupyterHub Helm chart configuration file 
 $(CONFIG_FILE): export ENV_DIR := /home/jovyan/.user_conda_envs/
 $(CONFIG_FILE): export FASTAI_BOOK_ENV :=fastbook
 $(CONFIG_FILE): export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
 $(CONFIG_FILE): TARGET_SPECIFIC_REQ_ENV_VARS := PROXY_SECRET # Fail if not defined
-## Generate JupyterHub Helm chart configuration file 
 $(CONFIG_FILE): validate_req_env_vars
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
