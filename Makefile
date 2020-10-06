@@ -121,7 +121,7 @@ generate-config:
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
 	source .env; \
-	envsubst <"${PROJECT_DIR}/${TEMPLATE_FILEPATH}" >"${PROJECT_DIR}/${CONFIG_FILEPATH}"
+	envsubst <$(PROJECT_DIR)/$(TEMPLATE_FILEPATH) >$(PROJECT_DIR)/$(CONFIG_FILEPATH)
 
 
 #################################################################################

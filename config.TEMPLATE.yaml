@@ -1,16 +1,16 @@
 ---
 proxy:
-  secretToken: "$PROXY_SECRET"
+  secretToken: "${PROXY_SECRET}"
 auth:
   type: github
   github:
-    clientId: "$GITHUB_CLIENT_ID"
-    clientSecret: "$GITHUB_CLIENT_SECRET"
-    callbackUrl: "http://$JUPYTERHUB_IP/hub/oauth_callback"
+    clientId: "${GITHUB_CLIENT_ID}"
+    clientSecret: "${GITHUB_CLIENT_SECRET}"
+    callbackUrl: "http://${JUPYTERHUB_IP}/hub/oauth_callback"
 singleuser:
   image:
-    name: "$DOCKER_REPO"
-    tag: "$IMG_TAG"
+    name: "${DOCKER_REPO}"
+    tag: "${IMG_TAG}"
     pullPolicy: Always
   defaultUrl: "/lab"
   cloudMetadata:  # For microk8s compatibility
