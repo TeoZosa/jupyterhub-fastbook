@@ -1,12 +1,7 @@
 ---
 proxy:
   secretToken: "${PROXY_SECRET}"
-auth:
-  type: github
-  github:
-    clientId: "${GITHUB_CLIENT_ID}"
-    clientSecret: "${GITHUB_CLIENT_SECRET}"
-    callbackUrl: "http://${JUPYTERHUB_IP}/hub/oauth_callback"
+${AUTH_SECTION}
 singleuser:
   image:
     name: "${DOCKER_REPO}"

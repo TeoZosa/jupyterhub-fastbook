@@ -114,6 +114,21 @@ else
 endif
 
 include .env
+# Include auth section only if all necessary environment variables are defined
+define AUTH_SECTION_TEMPLATE
+auth:
+  type: github
+  github:
+    clientId: "$(GITHUB_CLIENT_ID)"
+    clientSecret: "$(GITHUB_CLIENT_SECRET)"
+    callbackUrl: "http://$(JUPYTERHUB_IP)/hub/oauth_callback"
+endef
+# If all GitHub Oauth sections defined, include in template
+AUTH_ENV_VARS = GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET JUPYTERHUB_IP
+ifndef_any_of = $(filter undefined,$(foreach v,$(1),$(origin $(v))))
+ifeq ($(call ifndef_any_of,$(AUTH_ENV_VARS)),)
+$(CONFIG_FILE): export AUTH_SECTION := $(AUTH_SECTION_TEMPLATE)
+endif
 ## Generate JupyterHub Helm chart configuration file 
 $(CONFIG_FILE): export ENV_DIR := /home/jovyan/.user_conda_envs/
 $(CONFIG_FILE): export FASTAI_BOOK_ENV :=fastbook
