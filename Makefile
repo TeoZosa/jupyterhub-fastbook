@@ -49,7 +49,7 @@ CONFIG_FILE := config.yaml
 #################################################################################
 
 .PHONY: all
-all: build push generate-config deploy
+all: build push $(CONFIG_FILE) deploy
 
 # Check that given variables are set and all have non-empty values,
 # die with an error otherwise.
@@ -98,7 +98,7 @@ deploy: RELEASE := jhub
 deploy: NAMESPACE := jhub
 deploy: VER := 0.9.1
 ## Deploy JupyterHub to your Kubernetes cluster
-deploy: validate_req_env_vars generate-config 
+deploy: validate_req_env_vars $(CONFIG_FILE) 
 ifeq ($(! command -v helm &> /dev/null),)
 	@echo "helm could not be found!"
 	@echo "Please install helm!"
@@ -111,11 +111,11 @@ else
 	  --timeout 10m0s # Wait for pulling of large container images
 endif
 
-generate-config: export ENV_DIR := /home/jovyan/.user_conda_envs/
-generate-config: export FASTAI_BOOK_ENV :=fastbook
-generate-config: export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
+$(CONFIG_FILE): export ENV_DIR := /home/jovyan/.user_conda_envs/
+$(CONFIG_FILE): export FASTAI_BOOK_ENV :=fastbook
+$(CONFIG_FILE): export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
 ## Generate JupyterHub Helm chart configuration file 
-generate-config: validate_req_env_vars
+$(CONFIG_FILE): validate_req_env_vars
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
 	source .env; \
