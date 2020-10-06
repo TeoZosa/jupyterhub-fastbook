@@ -49,7 +49,7 @@ CONFIG_FILEPATH := config.yaml
 #################################################################################
 
 .PHONY: all
-all: build
+all: build push generate-config deploy
 
 # Check that given variables are set and all have non-empty values,
 # die with an error otherwise.
