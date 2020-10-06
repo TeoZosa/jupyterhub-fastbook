@@ -1,0 +1,55 @@
+---
+proxy:
+  secretToken: "$PROXY_SECRET"
+auth:
+  type: github
+  github:
+    clientId: "$GITHUB_CLIENT_ID"
+    clientSecret: "$GITHUB_CLIENT_SECRET"
+    callbackUrl: "http://$JUPYTERHUB_IP/hub/oauth_callback"
+singleuser:
+  image:
+    name: "$DOCKER_REPO"
+    tag: "$IMG_TAG"
+    pullPolicy: Always
+  defaultUrl: "/lab"
+  cloudMetadata:  # For microk8s compatibility
+    enabled: true
+  storage:  # For PyTorch Dataloader
+    extraVolumes:
+      - name: shm-volume
+        emptyDir:
+          medium: Memory
+    extraVolumeMounts:
+      - name: shm-volume
+        mountPath: /dev/shm
+  extraEnv:
+    GRANT_SUDO: "yes"
+    NOTEBOOK_ARGS: "--allow-root"
+  uid: 0
+  cmd: start-singleuser.sh
+  lifecycleHooks:
+    postStart:  # Provision user environment on initial startup
+      exec:
+        command:
+          - "bash"
+          - "-c"
+          - >
+            if [ ! -d "${FASTAI_BOOK_ENV}" ]; then
+              echo "Provisioning environment; this may take a few minutes.";
+              echo "Enabling persistent user conda env creation." &&
+              conda config --add envs_dirs $ENV_DIR &&
+              conda config --set env_prompt '({name})';
+              echo "Fetching ${FASTAI_BOOK_ENV} repo." &&
+              git clone "https://github.com/fastai/${FASTAI_BOOK_ENV}.git" &&
+              echo "Configuring conda for bash." &&
+              conda init bash &&
+              echo "conda activate ${FASTAI_BOOK_ENV}" >> .bashrc &&
+              ln -s .bashrc .bash_profile &&
+              echo "Provisioning succeeded!" ||
+                echo "Provisioning FAILED! Please contact an administrator for
+                  further assistance." &&
+                usr/bin/false;
+            fi;
+            echo "Welcome! Remember to select \"$FASTAI_BOOK_ENV\" as your
+              notebook kernel";
