@@ -64,9 +64,9 @@ __check_defined = \
 	$(if $(value $1),, \
 	  $(error Undefined $1$(if $2, ($2))))
 	  
-.PHONY: validate_flags
-validate_flags: REQ_ENV_VARS := DOCKER_REPO IMG PROJECT_NAME REGISTRY_NAMESPACE TAG
-validate_flags:
+.PHONY: validate_req_env_vars
+validate_req_env_vars: REQ_ENV_VARS := DOCKER_REPO IMG PROJECT_NAME REGISTRY_NAMESPACE TAG
+validate_req_env_vars:
 	$(foreach REQ_ENV_VAR,$(REQ_ENV_VARS),$(call check_defined, $(REQ_ENV_VAR), Required!))
 
 
@@ -78,7 +78,7 @@ validate_flags:
 build: export DOCKER_BUILDKIT=1# Dockerfile uses Docker BuildKit features for performance
 build: LATEST_IMG = $(DOCKER_REPO):latest
 ## Build docker container 
-build: validate_flags
+build: validate_req_env_vars
 	docker build --tag $(IMG) .
 	@echo Built $(IMG)
 	@if ! [ "$(TAG)" = latest ]; then \
@@ -88,7 +88,7 @@ build: validate_flags
 
 .PHONY: push
 ## Push image to Docker Hub container registry 
-push: validate_flags
+push: validate_req_env_vars
 	docker push "$(IMG)"
 	@echo Exported $(DOCKER_REPO) with  :$(TAG) tags \
 		to Docker Hub image registry
@@ -98,7 +98,7 @@ deploy: RELEASE := jhub
 deploy: NAMESPACE := jhub
 deploy: VER := 0.9.1
 ## Deploy JupyterHub to your Kubernetes cluster
-deploy: validate_flags generate-config 
+deploy: validate_req_env_vars generate-config 
 ifeq ($(! command -v helm &> /dev/null),)
 	@echo "helm could not be found!"
 	@echo "Please install helm!"
@@ -115,7 +115,7 @@ generate-config: export ENV_DIR := /home/jovyan/.user_conda_envs/
 generate-config: export FASTAI_BOOK_ENV :=fastbook
 generate-config: export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
 ## Generate JupyterHub Helm chart configuration file 
-generate-config: validate_flags
+generate-config: validate_req_env_vars
 	export CONFIG_FILEPATH=$(CONFIG_FILEPATH); \
 	export DOCKER_REPO=$(DOCKER_REPO); \
 	export IMG_TAG=$(TAG); \
