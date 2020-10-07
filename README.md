@@ -16,7 +16,7 @@ This is really handy if, for example, you would like to use
 as the basis for a course,
 to onboard new junior members of your organization's AI/ML team,
 as a way to go through the course on your own with very minimal setup
-(i.e., by [running the docker image in a container locally](#docker-container-deployment)),
+(i.e., by [running the Docker image in a container locally](#docker-container-deployment)),
 etc.
 
 
@@ -33,7 +33,7 @@ or any other organizations responsible for any of the technologies used in this 
 Overview
 ------------
 
-You may run the docker image as a container in single-user mode, outside of Kubernetes,
+You may run the Docker image as a container in single-user mode, outside of Kubernetes,
 in which case you would interact directly with the Jupyter Notebook interface instead (see: [Quickstart: Running the Docker image locally](#docker-container-deployment))
 
 The JupyterHub Kubernetes deployment portion of this project is based on
@@ -49,7 +49,7 @@ Quickstart
 ## <a name="docker-container-deployment">Running the Docker image locally</a>
 
 ```shell script
-# Specify the docker image tag you want to use,
+# Specify the Docker image tag you want to use,
 # i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-7890c25`
 TAG=${YOUR_DESIRED_TAG}
 docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
@@ -86,7 +86,7 @@ helm repo update
 make config.yaml
 
 # Deploy the JupyterHub service mesh onto your Kubernetes cluster
-# Specifying the docker image tag you want to use,
+# Specifying the Docker image tag you want to use,
 # i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-7890c25`
 make deploy TAG=${YOUR_DESIRED_TAG}
 ```
@@ -121,7 +121,7 @@ Advanced Usage:
 
 ##### Available rules:
 
-    build               Build docker container
+    build               Build Docker container
     config.yaml         Generate JupyterHub Helm chart configuration file
     deploy              Deploy JupyterHub to your Kubernetes cluster
     push                Push image to Docker Hub container registry

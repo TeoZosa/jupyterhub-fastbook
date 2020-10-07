@@ -75,7 +75,7 @@ validate_req_env_vars:
 #################################################################################
 
 .PHONY: build
-## Build docker container
+## Build Docker container
 build: export DOCKER_BUILDKIT=1# Dockerfile uses Docker BuildKit features for performance
 build: LATEST_IMG = $(DOCKER_REPO):latest
 build: TARGET_SPECIFIC_REQ_ENV_VARS := DOCKER_BUILDKIT LATEST_IMG # Fail if not defined
