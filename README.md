@@ -50,7 +50,7 @@ Quickstart
 
 ```shell script
 # Specify the docker image tag you want to use,
-# i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-fce38eb-dirty-c8fb2b`
+# i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-7890c25`
 TAG=${YOUR_DESIRED_TAG}
 docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
 ```
@@ -87,7 +87,7 @@ make config.yaml
 
 # Deploy the JupyterHub service mesh onto your Kubernetes cluster
 # Specifying the docker image tag you want to use,
-# i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-fce38eb-dirty-c8fb2b`
+# i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-7890c25`
 make deploy TAG=${YOUR_DESIRED_TAG}
 ```
 
