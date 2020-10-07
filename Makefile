@@ -101,7 +101,7 @@ deploy: NAMESPACE := jhub
 deploy: VER := 0.9.1
 deploy: TARGET_SPECIFIC_REQ_ENV_VARS := RELEASE NAMESPACE VER # Fail if not defined 
 deploy: validate_req_env_vars $(CONFIG_FILE) 
-ifeq ($(! command -v helm &> /dev/null),)
+ifeq ($(shell command -v helm),)
 	@echo "helm could not be found!"
 	@echo "Please install helm!"
 	@echo "Ex.: sudo snap install helm --classic"
