@@ -16,7 +16,7 @@ This is really handy if, for example, you would like to use
 as the basis for a course,
 to onboard new junior members of your organization's AI/ML team,
 as a way to go through the course on your own with very minimal setup
-(i.e., by [running the docker image in a container locally](#docker-container-deployment))
+(i.e., by [running the docker image in a container locally](#docker-container-deployment)),
 etc.
 
 
