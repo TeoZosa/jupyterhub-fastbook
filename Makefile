@@ -130,6 +130,7 @@ ifeq ($(call ifndef_any_of,$(AUTH_ENV_VARS)),)
 $(CONFIG_FILE): export AUTH_SECTION := $(AUTH_SECTION_TEMPLATE)
 endif
 ## Generate JupyterHub Helm chart configuration file 
+config.yaml: # Alias for auto-generated documentation 
 $(CONFIG_FILE): export ENV_DIR := /home/jovyan/.user_conda_envs/
 $(CONFIG_FILE): export FASTAI_BOOK_ENV :=fastbook
 $(CONFIG_FILE): export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
