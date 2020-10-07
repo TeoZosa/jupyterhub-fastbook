@@ -106,8 +106,10 @@ ifeq ($(shell command -v helm),)
 	@echo "Please install helm!"
 	@echo "Ex.: sudo snap install helm --classic"
 else
-	  helm upgrade --install $(RELEASE) jupyterhub/jupyterhub \
+	  helm upgrade --cleanup-on-fail \
+	  --install $(RELEASE) jupyterhub/jupyterhub \
 	  --namespace "$(NAMESPACE)" \
+	  --create-namespace \
 	  --version="$(VER)" \
 	  --values "$(CONFIG_FILE)" \
 	  --timeout 10m0s # Wait for pulling of large container images
