@@ -1,11 +1,11 @@
 ---
 proxy:
-  secretToken: "${PROXY_SECRET}"
+  secretToken: ${PROXY_SECRET}
 ${AUTH_SECTION}
 singleuser:
   image:
-    name: "${DOCKER_REPO}"
-    tag: "${IMG_TAG}"
+    name: ${DOCKER_REPO}
+    tag: ${IMG_TAG}
     pullPolicy: Always
   defaultUrl: "/lab"
   cloudMetadata:  # For microk8s compatibility
