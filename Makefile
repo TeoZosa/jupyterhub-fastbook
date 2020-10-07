@@ -1,11 +1,11 @@
-define DESCRIPTION 
+define DESCRIPTION
 * Deploy $(PROJECT_NAME) to your Kubernetes cluster via the official Helm chart.
 * Build and push your own $(PROJECT_NAME) images to your Docker registry.
-Note: 
-* To override any environment variables, do so when specifying your desired goal. 
+Note:
+* To override any environment variables, do so when specifying your desired goal.
   E.g., `make deploy TAG=latest`
 * This makefile utilizes strong tagging for unambiguous container image provenance.
-  Unless you are pushing and pulling to your own registry, you *MUST* override the 
+  Unless you are pushing and pulling to your own registry, you *MUST* override the
   the generated tag with your desired tag when deploying to your own cluster (see above).
 endef
 
@@ -63,7 +63,7 @@ check_defined = \
 __check_defined = \
 	$(if $(value $1),, \
 	  $(error Undefined $1$(if $2, ($2))))
-	  
+
 .PHONY: validate_req_env_vars
 validate_req_env_vars: REQ_ENV_VARS = DOCKER_REPO IMG PROJECT_NAME REGISTRY_NAMESPACE TAG $(TARGET_SPECIFIC_REQ_ENV_VARS)
 validate_req_env_vars:
@@ -75,7 +75,7 @@ validate_req_env_vars:
 #################################################################################
 
 .PHONY: build
-## Build docker container 
+## Build docker container
 build: export DOCKER_BUILDKIT=1# Dockerfile uses Docker BuildKit features for performance
 build: LATEST_IMG = $(DOCKER_REPO):latest
 build: TARGET_SPECIFIC_REQ_ENV_VARS := DOCKER_BUILDKIT LATEST_IMG # Fail if not defined
@@ -88,7 +88,7 @@ build: validate_req_env_vars
 	fi
 
 .PHONY: push
-## Push image to Docker Hub container registry 
+## Push image to Docker Hub container registry
 push: validate_req_env_vars
 	docker push "$(IMG)"
 	@echo Exported $(DOCKER_REPO) with  :$(TAG) tags \
@@ -99,8 +99,8 @@ push: validate_req_env_vars
 deploy: RELEASE := jhub
 deploy: NAMESPACE := jhub
 deploy: VER := 0.9.1
-deploy: TARGET_SPECIFIC_REQ_ENV_VARS := RELEASE NAMESPACE VER # Fail if not defined 
-deploy: validate_req_env_vars $(CONFIG_FILE) 
+deploy: TARGET_SPECIFIC_REQ_ENV_VARS := RELEASE NAMESPACE VER # Fail if not defined
+deploy: validate_req_env_vars $(CONFIG_FILE)
 ifeq ($(shell command -v helm),)
 	@echo "helm could not be found!"
 	@echo "Please install helm!"
@@ -131,8 +131,8 @@ ifndef_any_of = $(filter undefined,$(foreach v,$(1),$(origin $(v))))
 ifeq ($(call ifndef_any_of,$(AUTH_ENV_VARS)),)
 $(CONFIG_FILE): export AUTH_SECTION := $(AUTH_SECTION_TEMPLATE)
 endif
-## Generate JupyterHub Helm chart configuration file 
-config.yaml: # Alias for auto-generated documentation 
+## Generate JupyterHub Helm chart configuration file
+config.yaml: # Alias for auto-generated documentation
 $(CONFIG_FILE): export ENV_DIR := /home/jovyan/.user_conda_envs/
 $(CONFIG_FILE): export FASTAI_BOOK_ENV :=fastbook
 $(CONFIG_FILE): export TEMPLATE_FILEPATH := config.TEMPLATE.yaml
