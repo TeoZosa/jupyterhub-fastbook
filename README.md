@@ -14,14 +14,13 @@ JupyterHub-Fastbook
     for user authentication
 * Build and push your own JupyterHub-Fastbook images to your own Docker registry.
 
-This is really handy if, for example, you would like to use
-[fast.ai's Practical Deep Learning for Coders course](https://course.fast.ai/)
-as the basis for a course,
-to onboard new junior members of your organization's AI/ML team,
-as a way to go through the course on your own with very minimal setup
-(i.e., by [running the Docker image in a container locally](#docker-container-deployment)),
-etc.
-
+This is really handy if you would like to use
+[fast.ai's Practical Deep Learning for Coders course](https://course.fast.ai/):
+1. As the basis for a study group
+2. To onboard new junior members of your organization's AI/ML team
+3. As a way to go through the course on your own with very minimal setup
+(i.e., by [running the Docker image in a container locally](#docker-container-deployment))
+4. Anything else you can think of!
 
  <a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.
 
@@ -219,14 +218,17 @@ helm repo update
 
 source: [JupyterHub documentation: Setting up JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html)
 
-#### Generate a JupyterHub configuration file:
+#### Generate a JupyterHub configuration file<sup>[*](#config-auto-regenerated-on-deploy)</sup>:
 
 ```shell script
 make config.yaml
 ```
 This will create a `config.yaml` by populating fields of `config.TEMPLATE.yaml`
-with the pre-set deployment variables[*](#override-docker-env-var) and values specified in your `.env` file.
+with the pre-set deployment variables[†](#override-docker-env-var) and values specified in your `.env` file.
 
+<a name="config-auto-regenerated-on-deploy">*</a> 
+Anything generated here will be overwritten by the following deployment 
+step with the most recent values, but it this step is here for completion's sake.
 
 
 #### Deploy JupyterHub to your Kubernetes cluster:
@@ -239,11 +241,11 @@ make deploy TAG=${YOUR_DESIRED_TAG}
 ```
 
 This will deploy the JupyterHub instance to your cluster via the
-[official Helm chart](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html#install-jupyterhub), parametrized by pre-set deployment variables[*](#override-docker-env-var) and
+[official Helm chart](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html#install-jupyterhub), parametrized by pre-set deployment variables[†](#override-docker-env-var) and
 the `config.yaml` file you generated in the previous step.
 
 
-<a name="override-docker-env-var">*</a> to override a pre-set deployment variable, simply edit the appropriate value in `Makefile`.
+<a name="override-docker-env-var">†</a> to override a pre-set deployment variable, simply edit the appropriate value in `Makefile`.
 
 ### A note on built-in image tag logic:
 
