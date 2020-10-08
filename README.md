@@ -57,6 +57,8 @@ docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
 
 ###### Note: This will automatically pull the image from Docker Hub if it is not already present on your machine
 
+<img src=".github/docker_run_juypyter_address.png">
+
 Follow the directions on-screen to log in to your local Jupyter notebook environment! 🎉
 
 ##### Important: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
