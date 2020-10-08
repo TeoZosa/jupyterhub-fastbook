@@ -1,8 +1,6 @@
 JupyterHub-Fastbook
 ==============================
-<img src="https://jupyter.org/assets/hublogo.svg" width="200">
-+ 
-<img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
+<img src="https://jupyter.org/assets/hublogo.svg" width="200"> + <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
 1. ##### Deploy JupyterHub:
     - ###### To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
