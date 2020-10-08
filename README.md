@@ -4,15 +4,11 @@ JupyterHub-Fastbook
 + 
 <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
-* Deploy JupyterHub:
-    * To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the
-    [official Helm chart](https://jupyterhub.github.io/helm-chart).
-    * With a container image<sup>[[1]](#jupyter-minimal-notebook)</sup>
-    pre-loaded with [fast.ai's Practical Deep Learning for Coders course](https://course.fast.ai/)
-    [notebooks repository](https://github.com/fastai/fastbook) and all the required dependencies.
-    * [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps)
-    for user authentication
-* Build and push your own JupyterHub-Fastbook images to your own Docker registry.
+1. ##### Deploy JupyterHub:
+    - ###### To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
+    - ###### With the `JupyterHub-Fastbook` docker image<sup>[[1]](#jupyter-minimal-notebook)</sup> which comes pre-loaded with [fast.ai's Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and all the required dependencies.
+    - ###### [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
+2. ##### Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
 
 This is really handy if you would like to use
 [fast.ai's Practical Deep Learning for Coders course](https://course.fast.ai/):
