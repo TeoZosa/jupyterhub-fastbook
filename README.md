@@ -60,13 +60,13 @@ docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
 
 ###### Note: This will automatically pull the image from Docker Hub if it is not already present on your machine
 
-<img src=".github/docker_run_juypyter_address.png">
+<img src=".github/docker_run_juypyter_address.png" width="946">
 
 Follow the directions on-screen to log in to your local Jupyter notebook environment! 🎉
 
 ### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
 
-<img src=".github/jupyter_notebook_fastbook_kernel_selection.png">
+<img src=".github/jupyter_notebook_fastbook_kernel_selection.png" width="600">
 
 ## Deploying JupyterHub to your Kubernetes cluster
 
@@ -98,11 +98,11 @@ make deploy TAG=${YOUR_DESIRED_TAG}
 
 #### You should then be greeted by a Helm messages similar to the below:
 
-<img src=".github/helm_success.png">
+<img src=".github/helm_success.png" width="400">
 
 #### Once all the pods are running:
 
-<img src=".github/jupyterhub_pods_running.png">
+<img src=".github/jupyterhub_pods_running.png" width="1492">
 
 #### Get the address of the JupyterHub client:
 
@@ -113,13 +113,14 @@ echo $JUPYTERHUB_IP
 
 #### Type the IP from the previous step into your browser, login, and you should now be in the JupyterLab UI! 🎉
 
-<img src=".github/jupyterlab_ui_homepage.png">
+<img src=".github/jupyterlab_ui_homepage.png" width="400">
 
 ### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
 
-<img src=".github/jupyterlab_kernel_selection.png">
+<img src=".github/jupyterlab_kernel_selection.png" width="400">
 
-<img src=".github/jupyterlab_fastbook_kernel_selection.png">
+
+<img src=".github/jupyterlab_fastbook_kernel_selection.png" width="400">
 
 Advanced Usage:
 ------------
@@ -172,7 +173,7 @@ make deploy TAG=${YOUR_DESIRED_TAG}
 Now, the first time a user logs in to your JupyterHub instance,
 they will be greeted by a screen that looks like this:
 
-<img src=".github/github_oauth_confirmation.png">
+<img src=".github/github_oauth_confirmation.png" width="400">
 
 Once they click "Authorize", users will now automatically be authenticated via
 GitHub's Oauth whenever they log in.
