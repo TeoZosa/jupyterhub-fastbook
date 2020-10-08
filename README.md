@@ -118,8 +118,7 @@ echo $JUPYTERHUB_IP
 ### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
 
 <img src=".github/jupyterlab_kernel_selection.png" width="400">
-
-
+<p></p>
 <img src=".github/jupyterlab_fastbook_kernel_selection.png" width="400">
 
 Advanced Usage:
