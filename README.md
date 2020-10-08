@@ -96,22 +96,22 @@ make config.yaml
 make deploy TAG=${YOUR_DESIRED_TAG}
 ```
 
-You should then be greeted by a Helm messages similar to the below:
+#### You should then be greeted by a Helm messages similar to the below:
 
 <img src=".github/helm_success.png">
 
-Once all the pods are running:
+#### Once all the pods are running:
 
 <img src=".github/jupyterhub_pods_running.png">
 
-Get the address of the JupyterHub client:
+#### Get the address of the JupyterHub client:
 
 ```shell script
 JUPYTERHUB_IP=$(kubectl --namespace jhub get service proxy-public -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 echo $JUPYTERHUB_IP
 ```
 
-Type the IP from the previous step into your browser, login, and you should now be in the JupyterLab UI! 🎉
+#### Type the IP from the previous step into your browser, login, and you should now be in the JupyterLab UI! 🎉
 
 <img src=".github/jupyterlab_ui_homepage.png">
 
