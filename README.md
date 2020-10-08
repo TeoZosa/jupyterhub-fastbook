@@ -110,6 +110,8 @@ echo $JUPYTERHUB_IP
 
 Type the IP from the previous step into your browser, login, and you should now be in the JupyterLab UI! 🎉
 
+<img src=".github/jupyterlab_ui_homepage.png">
+
 ##### Important: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
 
 <img src=".github/jupyterlab_kernel_selection.png">
