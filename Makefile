@@ -121,9 +121,9 @@ define AUTH_SECTION_TEMPLATE
 auth:
   type: github
   github:
-    clientId: "$(GITHUB_CLIENT_ID)"
-    clientSecret: "$(GITHUB_CLIENT_SECRET)"
-    callbackUrl: "http://$(JUPYTERHUB_IP)/hub/oauth_callback"
+    clientId: "$(strip $(GITHUB_CLIENT_ID))"
+    clientSecret: "$(strip $(GITHUB_CLIENT_SECRET))"
+    callbackUrl: "http://$(strip $(JUPYTERHUB_IP))/hub/oauth_callback"
 endef
 # If all GitHub Oauth sections defined, include in template
 AUTH_ENV_VARS = GITHUB_CLIENT_ID GITHUB_CLIENT_SECRET JUPYTERHUB_IP
