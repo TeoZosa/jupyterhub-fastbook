@@ -64,7 +64,7 @@ docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
 
 Follow the directions on-screen to log in to your local Jupyter notebook environment! 🎉
 
-### Important: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
+### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
 
 <img src=".github/jupyter_notebook_fastbook_kernel_selection.png">
 
@@ -115,7 +115,7 @@ Type the IP from the previous step into your browser, login, and you should now 
 
 <img src=".github/jupyterlab_ui_homepage.png">
 
-### Important: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
+### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
 
 <img src=".github/jupyterlab_kernel_selection.png">
 
