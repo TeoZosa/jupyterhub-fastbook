@@ -136,13 +136,13 @@ and invoke `make` with one of: `build`, `push`.
 
 ## Enabling GitHub Oauth<sup>[[2]](#jupyterhub-documentation-oauth2)</sup>:
 
-##### Determine your JupyterHub host address (the address you use in your browser to access JupyterHub) and add it to your `.env` file:
+#### Determine your JupyterHub host address (the address you use in your browser to access JupyterHub) and add it to your `.env` file:
 ```shell script
 JUPYTERHUB_IP=$(kubectl --namespace jhub get service proxy-public -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 echo "export JUPYTERHUB_IP=${JUPYTERHUB_IP}" >> .env
 ```
 
-##### Generate your GitHub Oauth credentials and add them to your `.env` file:
+#### Generate your GitHub Oauth credentials and add them to your `.env` file:
 Follow this tutorial: [GitHub documentation: Building OAuth Apps - Creating an OAuth App](https://docs.github.com/en/free-pro-team@latest/developers/apps/creating-an-oauth-app), then:
 
 ```shell script
