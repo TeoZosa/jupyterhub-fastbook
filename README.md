@@ -1,6 +1,7 @@
 JupyterHub-Fastbook
 ==============================
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
 ### Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencies (installed in a [`conda`](https://www.anaconda.com/) environment) for an all-in-one automated, repeatable deployment without any setup.
@@ -155,7 +156,7 @@ echo $JUPYTERHUB_IP
 ### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
 
 <img src=".github/jupyterlab_kernel_selection.png" width="400">
-<p></p>
+\
 <img src=".github/jupyterlab_fastbook_kernel_selection.png" width="400">
 
 Advanced Usage:
@@ -303,6 +304,7 @@ the generated tag with your desired tag when deploying to your own cluster.
 ### [`fast.ai`](https://www.fast.ai/): A non-profit research group focused on deep learning and artificial intelligence. 
 -  [`fastai`](https://github.com/fastai/fastai): The free, open-source software library from fast.ai that simplifies training fast and accurate neural nets using modern best practices. 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
 - **Practical Deep Learning for Coders**: the creators of `fastai` show you how to train a model on a wide range of tasks using `fastai` and PyTorch. 
@@ -312,24 +314,35 @@ You’ll also dive progressively further into deep learning theory to gain a com
     - [(Book)](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527) 
     - [(Notebook Repository)](https://github.com/fastai/fastbook)
 
+\
+\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://jupyter.org/assets/main-logo.svg" width="100">
 
 ### [`Jupyter Notebook`](https://jupyter.org/hub): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 
+\
+\
 <img src="https://jupyter.org/assets/hublogo.svg" width="200">
 
 ### [`JupyterHub`](https://jupyter.org/hub): A multi-user version of the notebook designed for companies, classrooms and research labs
 
+\
+\
 <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png" width="200">
 
 ### [`Anaconda`](https://jupyter.org/hub) (`conda` for short): A free and open-source distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment.
 
+\
+\
 <img src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" width="200">
 
 ### [`Docker`](https://www.docker.com/): A set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers. 
 
 - A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
+\
+\
 <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" width="300">
 
 ### [`Kubernetes`](https://kubernetes.io/): An open-source system for automating deployment, scaling, and management of containerized applications.
