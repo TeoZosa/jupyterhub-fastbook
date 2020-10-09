@@ -10,7 +10,7 @@ JupyterHub-Fastbook
 <img src="https://jupyter.org/assets/hublogo.svg" width="200"> 
 
 
-### For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster.
+### For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster. This is a standalone deployment which can be extended or used as-is for your own multi-user Jupyter workflows. 
 
 <sup>*See the [Further Reading](#further-reading) section for more details.</sup>
 
@@ -40,16 +40,19 @@ why better than alternatives
 #### This project will allow you to<sup>[*](#assuming-technologies-installed)</sup>:
 
 1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` Docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>:
-2. ##### Deploy JupyterHub with the `JupyterHub-Fastbook` Docker image:
-    - ###### To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
-    - ###### [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
-3. ##### Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
+2. ##### Deploy JupyterHub (with the `JupyterHub-Fastbook` Docker image):
+    - To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
+    - [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
+3. ##### Roll your own JupyterHub deployment: 
+    - Use the deployment as-is; You get a fully-featured JupyterHub deployment that just so happens to have [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) dependencies pre-loaded.
+    - Extend the configuration and deployment system in this project for your particular needs. 
+    - Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
 
 <sup><a name="assuming-technologies-installed">*</a> Assuming you have the required technologies installed.</sup>
 
 <sup><a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.</sup>
 
-<sup><a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html).</sup>
+<sup><a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html). This means you get the same features of a default JupyterHub deployment with the added functionality of an isolated `fastbook` `conda` environment.</sup>
 
 #### Example Usages
 
