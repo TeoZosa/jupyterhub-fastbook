@@ -20,6 +20,7 @@ Disclaimer
 Neither I nor my employer are affiliated in any way with fast.ai, Project Jupyter,
 or any other organizations responsible for any of the technologies used in this project.
 
+------------
 
 Overview
 ------------
