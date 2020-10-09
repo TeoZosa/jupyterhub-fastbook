@@ -8,7 +8,7 @@ JupyterHub-Fastbook
 ### Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencies (installed in a [`conda`](https://www.anaconda.com/) environment) for an all-in-one automated, repeatable deployment without any setup.
 
 
-<img src="https://jupyter.org/assets/hublogo.svg" width="200"> 
+➕ <img src="https://jupyter.org/assets/hublogo.svg" width="200"> 
 
 
 ### For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster. This is a standalone deployment which can be extended or used as-is for your own multi-user Jupyter workflows. 
