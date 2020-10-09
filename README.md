@@ -2,6 +2,7 @@ JupyterHub-Fastbook
 ==============================
 
 <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140"> ➕
+<img src="https://jupyter.org/assets/main-logo.svg" width="110"> ➕
 <img src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png" height="140">
 
 ### Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencies (installed in a [`conda`](https://www.anaconda.com/) environment) for an all-in-one automated, repeatable deployment without any setup.
