@@ -140,11 +140,14 @@ make deploy TAG=${YOUR_DESIRED_TAG}
 
 #### You should then be greeted by a Helm messages similar to the below:
 
-<img src=".github/helm_success.png" width="400">
+<img src=".github/helm_success.png" width="763">
 
-#### Once all the pods are running:
+#### Check that all the pods are running:
 
-<img src=".github/jupyterhub_pods_running.png" width="1492">
+```shell script
+kubectl --namespace jhub get all
+```
+<img src=".github/jupyterhub_pods_running.png" width="802">
 
 #### Get the address of the JupyterHub client:
 
