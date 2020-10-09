@@ -45,7 +45,7 @@ why better than alternatives
     - To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
     - [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
 3. ##### Roll your own JupyterHub deployment: 
-    - Use the deployment as-is; You get a fully-featured JupyterHub deployment that just so happens to have [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) dependencies pre-loaded.
+    - Use the deployment as-is; you get a fully-featured JupyterHub deployment that just so happens to have [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) dependencies pre-loaded.
     - Extend the configuration and deployment system in this project for your particular needs. 
     - Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
 
