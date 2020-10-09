@@ -277,7 +277,7 @@ with the pre-set deployment variables<sup>[†](#override-docker-env-var)</sup> 
 
 <sup><a name="config-auto-regenerated-on-deploy">*</a> 
 Anything generated here will be overwritten by the following deployment 
-step with the most recent values, but it this step is here for completion's sake.</sup>
+step with the most recent values, but this step is here for completion's sake.</sup>
 
 
 #### Deploy JupyterHub to your Kubernetes cluster:
