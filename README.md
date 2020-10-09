@@ -45,11 +45,11 @@ why better than alternatives
     - ###### [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
 3. ##### Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
 
-<a name="assuming-technologies-installed">*</a> Assuming you have the required technologies installed.
+<sup><a name="assuming-technologies-installed">*</a> Assuming you have the required technologies installed.</sup>
 
-<a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.
+<sup><a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.</sup>
 
-<a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html).
+<sup><a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html).</sup>
 
 #### Example Usages
 
@@ -215,7 +215,7 @@ they will be greeted by a screen that looks like this:
 Once they click "Authorize", users will now automatically be authenticated via
 GitHub's Oauth whenever they log in.
 
- <a name="jupyterhub-documentation-oauth2">[2] see: [JupyterHub documentation: Authenticating with OAuth2 - GitHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/administrator/authentication.html#github) </a>
+<sup> <a name="jupyterhub-documentation-oauth2">[2] see: [JupyterHub documentation: Authenticating with OAuth2 - GitHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/administrator/authentication.html#github) </a></sup>
 
 <a name="jupyterhub-kubernetes-deployment-overview">JupyterHub Kubernetes Deployment Overview</a>
 ------------
@@ -266,11 +266,11 @@ source: [JupyterHub documentation: Setting up JupyterHub](https://zero-to-jupyte
 make config.yaml
 ```
 This will create a `config.yaml` by populating fields of `config.TEMPLATE.yaml`
-with the pre-set deployment variables[†](#override-docker-env-var) and values specified in your `.env` file.
+with the pre-set deployment variables<sup>[†](#override-docker-env-var)</sup> and values specified in your `.env` file.
 
-<a name="config-auto-regenerated-on-deploy">*</a> 
+<sup><a name="config-auto-regenerated-on-deploy">*</a> 
 Anything generated here will be overwritten by the following deployment 
-step with the most recent values, but it this step is here for completion's sake.
+step with the most recent values, but it this step is here for completion's sake.</sup>
 
 
 #### Deploy JupyterHub to your Kubernetes cluster:
@@ -283,11 +283,12 @@ make deploy TAG=${YOUR_DESIRED_TAG}
 ```
 
 This will deploy the JupyterHub instance to your cluster via the
-[official Helm chart](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html#install-jupyterhub), parametrized by pre-set deployment variables[†](#override-docker-env-var) and
+[official Helm chart](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html#install-jupyterhub), 
+parametrized by pre-set deployment variables<sup>[†](#override-docker-env-var)</sup> and
 the `config.yaml` file you generated in the previous step.
 
 
-<a name="override-docker-env-var">†</a> to override a pre-set deployment variable, simply edit the appropriate value in `Makefile`.
+<sup><a name="override-docker-env-var">†</a> to override a pre-set deployment variable, simply edit the appropriate value in `Makefile`.</sup>
 
 ### A note on built-in image tag logic:
 
