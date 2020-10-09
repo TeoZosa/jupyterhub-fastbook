@@ -13,7 +13,7 @@ JupyterHub-Fastbook
 
 ### For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster. This is a standalone deployment which can be extended or used as-is for your own multi-user Jupyter workflows. 
 
-<sup>*See the [Further Reading](#further-reading) section for more details.</sup>
+See the [Further Reading](#further-reading) section for more details on the above mentioned technologies.
 
 
 Disclaimer
