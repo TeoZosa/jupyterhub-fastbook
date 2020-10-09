@@ -38,7 +38,7 @@ tangible benefits
 why better than alternatives
 -->
 
-#### This project will allow you to<sup>[*](#assuming-technologies-installed)</sup>:
+## Benefits<sup>[*](#assuming-technologies-installed)</sup>
 
 1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` Docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>:
 2. ##### Deploy JupyterHub (with the `JupyterHub-Fastbook` Docker image):
@@ -55,7 +55,7 @@ why better than alternatives
 
 <sup><a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html). This means you get the same features of a default JupyterHub deployment with the added functionality of an isolated `fastbook` `conda` environment.</sup>
 
-#### Example Usages
+## Example Uses
 
 Use `JupyterHub-Fastbook` in conjunction with the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/):
 1. To go through the course on your own 
@@ -64,7 +64,7 @@ with virtually no setup by running the [`JupyterHub-Fastbook` Docker image local
 3. To onboard new junior members of your organization's AI/ML team
 4. Anything else you can think of!
 
-#### Why this project?
+## Why This Project?
 
 The purpose of this project was to reduce any initial technical barriers to entry for 
 the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/)
