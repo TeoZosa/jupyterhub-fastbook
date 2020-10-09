@@ -75,11 +75,11 @@ applications, then you shouldn't need a software engineering degree
 Technical Notes:
 ------------
 
-When running the Docker image as a container in single-user mode, outside of Kubernetes,
+1. When running the Docker image as a container in single-user mode, outside of Kubernetes,
 you will interact directly with the Jupyter Notebook interface 
 (see: [Quickstart: Running the Docker image locally](#docker-container-deployment)).
 
-The JupyterHub Kubernetes deployment portion of this project is based on
+2. The JupyterHub Kubernetes deployment portion of this project is based on
 the official [Zero to JupyterHub with Kubernetes guide ](https://zero-to-jupyterhub.readthedocs.io/en/latest/)
 and assumes you have your own Kubernetes cluster already set up. If not and you are just starting out,
 [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) is great for local development
