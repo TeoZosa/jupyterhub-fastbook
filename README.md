@@ -75,7 +75,7 @@ In the same spirit as the course, if you don't need a PhD to build AI
 applications, then you shouldn't need a software engineering degree
  to get started with the course. 
  
- We've done all the work for you. All you need to do is dive in and get started.  
+ We've done all the work for you. All you need to do is dive in and get started!  
 
 Technical Notes:
 ------------
