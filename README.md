@@ -1,24 +1,20 @@
 JupyterHub-Fastbook
 ==============================
-<img src="https://jupyter.org/assets/hublogo.svg" width="200"> + <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
-1. ##### Deploy JupyterHub:
-    - ###### To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
-    - ###### With the `JupyterHub-Fastbook` docker image<sup>[[1]](#jupyter-minimal-notebook)</sup> which comes pre-loaded with [fast.ai's Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and all the required dependencies.
-    - ###### [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
-2. ##### Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
+<img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
-This is really handy if you would like to use
-[fast.ai's Practical Deep Learning for Coders course](https://course.fast.ai/):
-1. As the basis for a study group
-2. To onboard new junior members of your organization's AI/ML team
-3. As a way to go through the course on your own with very minimal setup
-(i.e., by [running the Docker image in a container locally](#docker-container-deployment))
-4. Anything else you can think of!
+Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencies (installed in a [`conda`](https://www.anaconda.com/) environment) for an all-in-one automated, repeatable deployment without any setup.  
 
- <a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.
 
- <a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html).
+
+
+<img src="https://jupyter.org/assets/hublogo.svg" width="200"> 
+
+
+For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster.
+
+<sup>*See the [Further Reading](#further-reading) section for more details.</sup>
+
 
 Disclaimer
 ------------
@@ -26,11 +22,63 @@ Disclaimer
 Neither I nor my employer are affiliated in any way with fast.ai, Project Jupyter,
 or any other organizations responsible for any of the technologies used in this project.
 
+
 Overview
 ------------
 
-You may run the Docker image as a container in single-user mode, outside of Kubernetes,
-in which case you would interact directly with the Jupyter Notebook interface instead (see: [Quickstart: Running the Docker image locally](#docker-container-deployment))
+<!--            
+TODO 
+
+1-2 sentences explaining:
+* ELI(fresh out of CS course)/someone scouring the web why this is good
+
+techs
+tangible benefits
+why better than alternatives
+-->
+
+#### This project will allow you to<sup>[*](#assuming-technologies-installed)</sup>:
+
+1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>:
+2. ##### Deploy JupyterHub with the `JupyterHub-Fastbook` docker image:
+    - ###### To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
+    - ###### [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
+3. ##### Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
+
+<a name="assuming-technologies-installed">*</a> Assuming you have the required technologies installed.
+
+<a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.
+
+<a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html).
+
+#### Example Usages
+
+Use `JupyterHub-Fastbook` in conjunction with the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/):
+1. To go through the course on your own 
+with virtually no setup by running the [`JupyterHub-Fastbook` Docker image locally](#docker-container-deployment).
+2. As the basis for a study group
+3. To onboard new junior members of your organization's AI/ML team
+4. Anything else you can think of!
+
+#### Why this project?
+
+The purpose of this project was to reduce any initial technical barriers to entry for 
+the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/)
+ by automating the setup, configuration, and maintenance of a compatible 
+ programming environment, and scaling that to both individuals and groups of individuals.
+
+In the same spirit as the course, if you don't need a PhD to build AI 
+applications, then you shouldn't need a software engineering degree
+ to get started with the course. 
+ 
+ We've done all the work for you so that can just dive in and get started.  
+
+Technical Notes:
+------------
+
+When running the Docker image as a container in single-user mode, outside of Kubernetes,
+you will interact directly with the Jupyter Notebook interface 
+(see: [Quickstart: Running the Docker image locally](#docker-container-deployment)).
 
 The JupyterHub Kubernetes deployment portion of this project is based on
 the official [Zero to JupyterHub with Kubernetes guide ](https://zero-to-jupyterhub.readthedocs.io/en/latest/)
@@ -51,7 +99,7 @@ TAG=${YOUR_DESIRED_TAG}
 docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
 ```
 
-###### Note: This will automatically pull the image from Docker Hub if it is not already present on your machine
+###### Note: This will automatically pull the image from Docker Hub if it is not already present on your machine; it is fairly large (~5 GB), so this may take awhile.
 
 <img src=".github/docker_run_jupyter_address.png" width="946">
 
@@ -245,16 +293,45 @@ the `config.yaml` file you generated in the previous step.
 
 The `makefile` defaults to strong versioning of image tags (derived from [Google's Kubeflow](https://www.kubeflow.org/) [Central Dashboard Makefile](https://github.com/kubeflow/kubeflow/blob/305393b0a543feeec6c1dc866ce2637ef1985a74/components/centraldashboard/Makefile)) for unambiguous container image provenance.
 
-Unless you are pushing and pulling to your own registry, you *MUST* override the
+Unless you are pushing and pulling to your own registry, you *MUST* override
 the generated tag with your desired tag when deploying to your own cluster.
 
-Further Reading
+
+<a name="further-reading">Further Reading</a>
 ------------
 
-### [`fast.ai`](https://www.fast.ai/): Making neural nets uncool again
-- Practical Deep Learning for Coders:
-[(Course)](https://course.fast.ai/) [(Book)](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527) [(Notebook Repository)](https://github.com/fastai/fastbook)
+### [`fast.ai`](https://www.fast.ai/): A non-profit research group focused on deep learning and artificial intelligence. 
+-  [`fastai`](https://github.com/fastai/fastai): The free, open-source software library from fast.ai that simplifies training fast and accurate neural nets using modern best practices. 
+
+<img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
+
+- **Practical Deep Learning for Coders**: the creators of `fastai` show you how to train a model on a wide range of tasks using `fastai` and PyTorch. 
+You’ll also dive progressively further into deep learning theory to gain a complete understanding of the algorithms behind the scenes.
+
+    - [(Course)](https://course.fast.ai/) 
+    - [(Book)](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527) 
+    - [(Notebook Repository)](https://github.com/fastai/fastbook)
+
+<img src="https://jupyter.org/assets/main-logo.svg" width="100">
+
+### [`Jupyter Notebook`](https://jupyter.org/hub): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 
 <img src="https://jupyter.org/assets/hublogo.svg" width="200">
 
 ### [`JupyterHub`](https://jupyter.org/hub): A multi-user version of the notebook designed for companies, classrooms and research labs
+
+<img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png" width="200">
+
+### [`Anaconda`](https://jupyter.org/hub) (`conda` for short): A free and open-source distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment.
+
+<img src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" width="200">
+
+### [`Docker`](https://www.docker.com/): A set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers. 
+
+- A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
+<img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" width="300">
+
+### [`Kubernetes`](https://kubernetes.io/): An open-source system for automating deployment, scaling, and management of containerized applications.
+                                             
+
