@@ -3,15 +3,13 @@ JupyterHub-Fastbook
 
 <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
-Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencies (installed in a [`conda`](https://www.anaconda.com/) environment) for an all-in-one automated, repeatable deployment without any setup.  
-
-
+### Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencies (installed in a [`conda`](https://www.anaconda.com/) environment) for an all-in-one automated, repeatable deployment without any setup.
 
 
 <img src="https://jupyter.org/assets/hublogo.svg" width="200"> 
 
 
-For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster.
+### For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster.
 
 <sup>*See the [Further Reading](#further-reading) section for more details.</sup>
 
