@@ -157,7 +157,7 @@ tangible benefits
 why better than alternatives
 -->
 
-Benefits<sup>[*](#assuming-technologies-installed)</sup>
+Benefits
 ------------
 
 
@@ -169,8 +169,6 @@ Benefits<sup>[*](#assuming-technologies-installed)</sup>
     - Use the deployment as-is; you get a fully-featured JupyterHub deployment that just so happens to have [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) dependencies pre-loaded.
     - Extend the configuration and deployment system in this project for your particular needs.
     - Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
-
-<sup><a name="assuming-technologies-installed">*</a> Assuming you have the required technologies installed.</sup>
 
 <sup><a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.</sup>
 
