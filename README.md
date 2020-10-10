@@ -125,7 +125,7 @@ kubectl --namespace jhub get all
 ```
 <img src=".github/jupyterhub_pods_running.png" width="802">
 
-#### Get the address of the JupyterHub client
+#### Get the JupyterHub server address
 
 ```shell script
 JUPYTERHUB_IP=$(kubectl --namespace jhub get service proxy-public -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
