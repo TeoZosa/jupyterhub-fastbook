@@ -69,9 +69,10 @@ Quickstart
 
 
 ```shell script
-# Specify the Docker image tag you want to use,
-# i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-7890c25`
-TAG=${YOUR_DESIRED_TAG}
+# Note: the `latest` tag is used here for expediency. When possible, you should
+# pin your version by specifying an exact Docker image tag,
+# e.g., `TAG=v20201007-7890c25`
+TAG=latest
 docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
 ```
 
@@ -106,10 +107,11 @@ helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
 helm repo update
 
 # Deploy the JupyterHub service mesh onto your Kubernetes cluster
-# using the secret token you generated in step 1 and
-# specifying the Docker image tag you want to use,
-# i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-7890c25`
-make deploy TAG=${YOUR_DESIRED_TAG}
+# using the secret token you generated in step 1.
+# Note: the `latest` tag is used here for expediency. When possible, you should
+# pin your version by specifying an exact Docker image tag,
+# e.g., `TAG=v20201007-7890c25`
+make deploy TAG=latest
 ```
 
 #### You should then be greeted by a Helm messages similar to the below
