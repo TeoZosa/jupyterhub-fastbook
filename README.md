@@ -24,73 +24,6 @@ or any other organizations responsible for any of the technologies used in this 
 
 ------------
 
-Overview
-------------
-
-<!--            
-TODO 
-
-1-2 sentences explaining:
-* ELI(fresh out of CS course)/someone scouring the web why this is good
-
-techs
-tangible benefits
-why better than alternatives
--->
-
-## Benefits<sup>[*](#assuming-technologies-installed)</sup>
-
-1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` Docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>:
-2. ##### Deploy JupyterHub (with the `JupyterHub-Fastbook` Docker image):
-    - To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
-    - [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
-3. ##### Roll your own JupyterHub deployment: 
-    - Use the deployment as-is; you get a fully-featured JupyterHub deployment that just so happens to have [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) dependencies pre-loaded.
-    - Extend the configuration and deployment system in this project for your particular needs. 
-    - Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
-
-<sup><a name="assuming-technologies-installed">*</a> Assuming you have the required technologies installed.</sup>
-
-<sup><a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.</sup>
-
-<sup><a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html). This means you get the same features of a default JupyterHub deployment with the added functionality of an isolated `fastbook` `conda` environment.</sup>
-
-## Example Uses
-
-Use `JupyterHub-Fastbook` in conjunction with the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/):
-1. To go through the course on your own 
-with virtually no setup by running the [`JupyterHub-Fastbook` Docker image locally](#docker-container-deployment).
-2. As the basis for a study group
-3. To onboard new junior members of your organization's AI/ML team
-4. Anything else you can think of!
-
-## Why This Project?
-
-The purpose of this project was to reduce any initial technical barriers to entry for 
-the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/)
- by automating the setup, configuration, and maintenance of a compatible 
- programming environment, scaling that experience to both individuals and groups of individuals.
-
-In the same spirit as the course, if you don't need a PhD to build AI 
-applications, then you shouldn't need a software engineering degree
- to get started with the course. 
- 
- We've done all the work for you. All you need to do is dive in and get started!  
-
-Technical Notes:
-------------
-
-1. When running the Docker image as a container in single-user mode, outside of Kubernetes,
-you will interact directly with the Jupyter Notebook interface 
-(see: [Quickstart: Running the Docker image locally](#docker-container-deployment)).
-
-2. The JupyterHub Kubernetes deployment portion of this project is based on
-the official [Zero to JupyterHub with Kubernetes guide ](https://zero-to-jupyterhub.readthedocs.io/en/latest/)
-and assumes you have your own Kubernetes cluster already set up. If not and you are just starting out,
-[Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) is great for local development
-and [Microk8s](https://microk8s.io/) works well for single-node clusters.
-
-
 Quickstart
 ------------
 
@@ -167,6 +100,73 @@ echo $JUPYTERHUB_IP
 <img src=".github/jupyterlab_fastbook_kernel_selection.png" width="400">
 
 ------------
+
+Overview
+------------
+
+<!--  
+TODO
+
+1-2 sentences explaining:
+* ELI(fresh out of CS course)/someone scouring the web why this is good
+
+techs
+tangible benefits
+why better than alternatives
+-->
+
+## Benefits<sup>[*](#assuming-technologies-installed)</sup>
+
+1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` Docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>:
+2. ##### Deploy JupyterHub (with the `JupyterHub-Fastbook` Docker image):
+    - To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
+    - [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
+3. ##### Roll your own JupyterHub deployment:
+    - Use the deployment as-is; you get a fully-featured JupyterHub deployment that just so happens to have [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) dependencies pre-loaded.
+    - Extend the configuration and deployment system in this project for your particular needs.
+    - Build and push your own `JupyterHub-Fastbook` images to your own Docker registry.
+
+<sup><a name="assuming-technologies-installed">*</a> Assuming you have the required technologies installed.</sup>
+
+<sup><a name="microk8s">[0]</a> Tested with [Microk8s](https://microk8s.io/) on Ubuntu 18.04.4.</sup>
+
+<sup><a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html). This means you get the same features of a default JupyterHub deployment with the added functionality of an isolated `fastbook` `conda` environment.</sup>
+
+## Example Uses
+
+Use `JupyterHub-Fastbook` in conjunction with the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/):
+1. To go through the course on your own
+with virtually no setup by running the [`JupyterHub-Fastbook` Docker image locally](#docker-container-deployment).
+2. As the basis for a study group
+3. To onboard new junior members of your organization's AI/ML team
+4. Anything else you can think of!
+
+## Why This Project?
+
+The purpose of this project was to reduce any initial technical barriers to entry for
+the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/)
+ by automating the setup, configuration, and maintenance of a compatible
+ programming environment, scaling that experience to both individuals and groups of individuals.
+
+In the same spirit as the course, if you don't need a PhD to build AI
+applications, then you shouldn't need a software engineering degree
+ to get started with the course.
+
+ We've done all the work for you. All you need to do is dive in and get started!  
+
+Technical Notes:
+------------
+
+1. When running the Docker image as a container in single-user mode, outside of Kubernetes,
+you will interact directly with the Jupyter Notebook interface
+(see: [Quickstart: Running the Docker image locally](#docker-container-deployment)).
+
+2. The JupyterHub Kubernetes deployment portion of this project is based on
+the official [Zero to JupyterHub with Kubernetes guide ](https://zero-to-jupyterhub.readthedocs.io/en/latest/)
+and assumes you have your own Kubernetes cluster already set up. If not and you are just starting out,
+[Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) is great for local development
+and [Microk8s](https://microk8s.io/) works well for single-node clusters.
+
 
 Advanced Usage:
 ------------
