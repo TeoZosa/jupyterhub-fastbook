@@ -166,6 +166,8 @@ echo $JUPYTERHUB_IP
 \
 <img src=".github/jupyterlab_fastbook_kernel_selection.png" width="400">
 
+------------
+
 Advanced Usage:
 ------------
 
@@ -223,6 +225,8 @@ Once they click "Authorize", users will now automatically be authenticated via
 GitHub's Oauth whenever they log in.
 
 <sup> <a name="jupyterhub-documentation-oauth2">[2] see: [JupyterHub documentation: Authenticating with OAuth2 - GitHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/administrator/authentication.html#github) </a></sup>
+
+------------
 
 <a name="jupyterhub-kubernetes-deployment-overview">JupyterHub Kubernetes Deployment Overview</a>
 ------------
@@ -304,6 +308,7 @@ The `makefile` defaults to strong versioning of image tags (derived from [Google
 Unless you are pushing and pulling to your own registry, you *MUST* override
 the generated tag with your desired tag when deploying to your own cluster.
 
+------------
 
 <a name="further-reading">Further Reading</a>
 ------------
