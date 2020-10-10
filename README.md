@@ -25,7 +25,8 @@ or any other organizations responsible for any of the technologies used in this 
 ------------
 
 Quickstart
-------------
+==============================
+
 
 ## <a name="docker-container-deployment">Running the Docker image locally</a>
 
@@ -102,7 +103,8 @@ echo $JUPYTERHUB_IP
 ------------
 
 Overview
-------------
+==============================
+
 
 <!--  
 TODO
@@ -169,7 +171,8 @@ and [Microk8s](https://microk8s.io/) works well for single-node clusters.
 
 
 Advanced Usage:
-------------
+==============================
+
 
 ## Makefile overview:  
 
@@ -229,7 +232,8 @@ GitHub's Oauth whenever they log in.
 ------------
 
 <a name="jupyterhub-kubernetes-deployment-overview">JupyterHub Kubernetes Deployment Explanation</a>
-------------
+==============================
+
 
 ## Setup:
 
@@ -311,7 +315,8 @@ the generated tag with your desired tag when deploying to your own cluster.
 ------------
 
 <a name="further-reading">Further Reading</a>
-------------
+==============================
+
 
 ### [`fast.ai`](https://www.fast.ai/): A non-profit research group focused on deep learning and artificial intelligence. 
 -  [`fastai`](https://github.com/fastai/fastai): The free, open-source software library from fast.ai that simplifies training fast and accurate neural nets using modern best practices. 
