@@ -41,8 +41,8 @@ Table of Contents
   * [Why This Project?](#why-this-project)
   * [Technical Notes](#technical-notes)
 - [Advanced Usage](#advanced-usage)
-  * [Makefile overview](#makefile-overview)
-  * [Build and push your own Docker image](#build-and-push-your-own-docker-image)
+  * [Makefile Overview](#makefile-overview)
+  * [Build and Push Your Own Docker Image](#build-and-push-your-own-docker-image)
   * [Enabling GitHub Oauth](#enabling-github-oauth2)
 - [JupyterHub Kubernetes Deployment Explanation](#jupyterhub-kubernetes-deployment-explanation)
   * [Setup](#setup)
@@ -220,7 +220,7 @@ Advanced Usage
 ==============================
 
 
-Makefile overview  
+Makefile Overview  
 ------------
 
 
@@ -235,7 +235,7 @@ Makefile overview
 Tip: invoking `make` without any arguments will display auto-generated
 documentation similar to the above.  
 
-Build and push your own Docker image
+Build and Push Your Own Docker Image
 ------------
 
 
