@@ -29,6 +29,37 @@ or any other organizations responsible for any of the technologies used in this 
 
 ------------
 
+Table of Contents
+<!-- toc -->
+
+- [Quickstart](#quickstart)
+  * [Running the Docker image locally](#running-the-docker-image-locally)
+  * [Deploying JupyterHub to your Kubernetes cluster](#deploying-jupyterhub-to-your-kubernetes-cluster)
+- [Overview](#overview)
+  * [Benefits](#benefits)
+  * [Example Uses](#example-uses)
+  * [Why This Project?](#why-this-project)
+  * [Technical Notes](#technical-notes)
+- [Advanced Usage](#advanced-usage)
+  * [Makefile overview](#makefile-overview)
+  * [Build and push your own Docker image](#build-and-push-your-own-docker-image)
+  * [Enabling GitHub Oauth](#enabling-github-oauth2)
+- [JupyterHub Kubernetes Deployment Explanation](#jupyterhub-kubernetes-deployment-explanation)
+  * [Setup](#setup)
+  * [Deployment](#deployment)
+    + [Generate a JupyterHub configuration file](#generate-a-jupyterhub-configuration-file)
+    + [Deploy JupyterHub to your Kubernetes cluster](#deploy-jupyterhub-to-your-kubernetes-cluster)
+    + [A note on built-in image tag logic](#a-note-on-built-in-image-tag-logic)
+- [Further Reading](#further-reading)
+  * [`fast.ai`](#fastai-a-non-profit-research-group-focused-on-deep-learning-and-artificial-intelligence)
+  * [`Jupyter Notebook`](#jupyter-notebook-an-open-source-web-application-that-allows-you-to-create-and-share-documents-that-contain-live-code-equations-visualizations-and-narrative-text)
+  * [`JupyterHub`](#jupyterhub-a-multi-user-version-of-the-notebook-designed-for-companies-classrooms-and-research-labs)
+  * [`Anaconda`](#anaconda-conda-for-short-a-free-and-open-source-distribution-of-the-python-and-r-programming-languages-for-scientific-computing-that-aims-to-simplify-package-management-and-deployment)
+  * [`Docker`](#docker-a-set-of-platform-as-a-service-products-that-use-os-level-virtualization-to-deliver-software-in-packages-called-containers)
+  * [`Kubernetes`](#kubernetes-an-open-source-system-for-automating-deployment-scaling-and-management-of-containerized-applications)
+
+<!-- tocstop -->
+
 Quickstart
 ==============================
 
