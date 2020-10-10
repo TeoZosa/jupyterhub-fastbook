@@ -132,9 +132,11 @@ JUPYTERHUB_IP=$(kubectl --namespace jhub get service proxy-public -o jsonpath='{
 echo $JUPYTERHUB_IP
 ```
 
-#### Type the IP from the previous step into your browser, login, and you should now be in the JupyterLab UI! 🎉
+#### Type the IP from the previous step into your browser, login<sup>[*](#default-authenticator)</sup>, and you should now be in the JupyterLab UI! 🎉
 
 <img src=".github/jupyterlab_ui_homepage.png" width="400">
+
+<sup><a name="default-authenticator">*</a> JupyterHub is running with a default _dummy_ authenticator so entering any username and password combination will let you enter the hub.</sup>
 
 ### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment
 
