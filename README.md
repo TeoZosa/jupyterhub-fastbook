@@ -145,18 +145,6 @@ echo $JUPYTERHUB_IP
 Overview
 ==============================
 
-
-<!--  
-TODO
-
-1-2 sentences explaining:
-* ELI(fresh out of CS course)/someone scouring the web why this is good
-
-techs
-tangible benefits
-why better than alternatives
--->
-
 Benefits
 ------------
 
