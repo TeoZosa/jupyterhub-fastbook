@@ -18,7 +18,7 @@ For those that lead a team, scale out by deploying the environment to multiple u
 ------------
 This is a standalone deployment which can be extended or used as-is for your own multi-user Jupyter workflows.
 
-See the [Further Reading](#further-reading) section for more details on the above mentioned technologies.
+*See the [Further Reading](#further-reading) section for more details on the above mentioned technologies.
 
 
 Disclaimer
