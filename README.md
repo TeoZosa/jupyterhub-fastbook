@@ -228,7 +228,7 @@ GitHub's Oauth whenever they log in.
 
 ------------
 
-<a name="jupyterhub-kubernetes-deployment-overview">JupyterHub Kubernetes Deployment Overview</a>
+<a name="jupyterhub-kubernetes-deployment-overview">JupyterHub Kubernetes Deployment Explanation</a>
 ------------
 
 ## Setup:
