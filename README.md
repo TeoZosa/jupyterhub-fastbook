@@ -151,7 +151,7 @@ Benefits
 ------------
 
 
-1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` Docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>:
+1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` Docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>
 2. ##### Deploy JupyterHub (with the `JupyterHub-Fastbook` Docker image):
     - To your Kubernetes cluster<sup>[[0]](#microk8s)</sup> via the [official Helm chart](https://jupyterhub.github.io/helm-chart).
     - [_Optional_] Using [Github Oauth](https://docs.github.com/en/free-pro-team@latest/developers/apps/building-oauth-apps) for user authentication
