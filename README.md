@@ -175,7 +175,8 @@ Use `JupyterHub-Fastbook` in conjunction with the [fast.ai Practical Deep Learni
 with virtually no setup by running the [`JupyterHub-Fastbook` Docker image locally](#docker-container-deployment).
 2. As the basis for a study group
 3. To onboard new junior members of your organization's AI/ML team
-4. Anything else you can think of!
+
+Or anything else you can think of!
 
 Why This Project?
 ------------
