@@ -343,7 +343,10 @@ Once you've verified `config.yaml` contains the correct information,
 on the command line, run:
 
 ```shell script
-make deploy TAG=${YOUR_DESIRED_TAG}
+# Note: the `latest` tag is used here for expediency. When possible, you should
+# pin your version by specifying an exact Docker image tag,
+# e.g., `TAG=v20201007-7890c25`
+make deploy TAG=latest
 ```
 
 This will deploy the JupyterHub instance to your cluster via the
