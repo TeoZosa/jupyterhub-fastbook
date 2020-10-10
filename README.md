@@ -50,7 +50,7 @@ docker run -p 8888:8888 teozosa/jupyterhub-fastbook:${TAG}
 
 Follow the directions on-screen to log in to your local Jupyter notebook environment! 🎉
 
-### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
+### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment
 
 <img src=".github/jupyter_notebook_fastbook_kernel_selection.png" width="600">
 
@@ -81,18 +81,18 @@ helm repo update
 make deploy TAG=${YOUR_DESIRED_TAG}
 ```
 
-#### You should then be greeted by a Helm messages similar to the below:
+#### You should then be greeted by a Helm messages similar to the below
 
 <img src=".github/helm_success.png" width="763">
 
-#### Check that all the pods are running:
+#### Check that all the pods are running
 
 ```shell script
 kubectl --namespace jhub get all
 ```
 <img src=".github/jupyterhub_pods_running.png" width="802">
 
-#### Get the address of the JupyterHub client:
+#### Get the address of the JupyterHub client
 
 ```shell script
 JUPYTERHUB_IP=$(kubectl --namespace jhub get service proxy-public -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
@@ -103,7 +103,7 @@ echo $JUPYTERHUB_IP
 
 <img src=".github/jupyterlab_ui_homepage.png" width="400">
 
-### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment:
+### **Important**: When running the fast.ai notebooks, be sure to switch the notebook kernel to the `fastbook` environment
 
 <img src=".github/jupyterlab_kernel_selection.png" width="400">
 \
@@ -171,7 +171,7 @@ applications, then you shouldn't need a software engineering degree
 
  We've done all the work for you. All you need to do is dive in and get started!  
 
-Technical Notes:
+Technical Notes
 ------------
 
 1. When running the Docker image as a container in single-user mode, outside of Kubernetes,
@@ -185,15 +185,15 @@ and assumes you have your own Kubernetes cluster already set up. If not and you 
 and [Microk8s](https://microk8s.io/) works well for single-node clusters.
 
 
-Advanced Usage:
+Advanced Usage
 ==============================
 
 
-Makefile overview:  
+Makefile overview  
 ------------
 
 
-##### Available rules:
+##### Available rules
 
     build               Build Docker container
     config.yaml         Generate JupyterHub Helm chart configuration file
@@ -213,17 +213,17 @@ Docker images to your own repository. Simply edit the appropriate fields in `Mak
 and invoke `make` with one of: `build`, `push`.
 
 
-Enabling GitHub Oauth<sup>[[2]](#jupyterhub-documentation-oauth2)</sup>:
+Enabling GitHub Oauth<sup>[[2]](#jupyterhub-documentation-oauth2)</sup>
 ------------
 
 
-#### Determine your JupyterHub host address (the address you use in your browser to access JupyterHub) and add it to your `.env` file:
+#### Determine your JupyterHub host address (the address you use in your browser to access JupyterHub) and add it to your `.env` file
 ```shell script
 JUPYTERHUB_IP=$(kubectl --namespace jhub get service proxy-public -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 echo "export JUPYTERHUB_IP=${JUPYTERHUB_IP}" >> .env
 ```
 
-#### Generate your GitHub Oauth credentials and add them to your `.env` file:
+#### Generate your GitHub Oauth credentials and add them to your `.env` file
 Follow this tutorial: [GitHub documentation: Building OAuth Apps - Creating an OAuth App](https://docs.github.com/en/free-pro-team@latest/developers/apps/creating-an-oauth-app), then:
 
 ```shell script
@@ -233,7 +233,7 @@ echo "export GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}" >> .env
 echo "export GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}" >> .env
 ```
 
-#### Redeploy your JupyterHub instance:
+#### Redeploy your JupyterHub instance
 
  ```shell script
 make config.yaml
@@ -256,7 +256,7 @@ GitHub's Oauth whenever they log in.
 ==============================
 
 
-Setup:
+Setup
 ------------
 
 
@@ -265,7 +265,7 @@ source: [JupyterHub documentation: Setting up JupyterHub](https://zero-to-jupyte
 
 Note: commands in this section should be run on the command line from the root of your repository.
 
-#### Generate a secret token for your JupyterHub deployment and place it in your local `.env` file:
+#### Generate a secret token for your JupyterHub deployment and place it in your local `.env` file
 
  ```shell script
  echo "export PROXY_SECRET=$(openssl rand -hex 32)" > .env
@@ -275,7 +275,7 @@ Note: commands in this section should be run on the command line from the root o
 If you need to store these values in version control, consider using something
 like [SOPS](https://github.com/mozilla/sops).
 
-#### Install Helm:
+#### Install Helm
 
 source: [JupyterHub documentation: Setting up Helm](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-helm.html#setting-up-helm)
 
@@ -294,13 +294,13 @@ helm repo update
 ```
 
 
-Deployment:
+Deployment
 ------------
 
 
 source: [JupyterHub documentation: Setting up JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html)
 
-### Generate a JupyterHub configuration file<sup>[*](#config-auto-regenerated-on-deploy)</sup>:
+### Generate a JupyterHub configuration file<sup>[*](#config-auto-regenerated-on-deploy)</sup>
 
 ```shell script
 make config.yaml
@@ -313,7 +313,7 @@ Anything generated here will be overwritten by the following deployment
 step with the most recent values, but this step is here for completion's sake.</sup>
 
 
-### Deploy JupyterHub to your Kubernetes cluster:
+### Deploy JupyterHub to your Kubernetes cluster
 
 Once you've verified `config.yaml` contains the correct information,
 on the command line, run:
@@ -330,7 +330,7 @@ the `config.yaml` file you generated in the previous step.
 
 <sup><a name="override-docker-env-var">†</a> to override a pre-set deployment variable, simply edit the appropriate value in `Makefile`.</sup>
 
-### A note on built-in image tag logic:
+### A note on built-in image tag logic
 
 The `makefile` defaults to strong versioning of image tags (derived from [Google's Kubeflow](https://www.kubeflow.org/) [Central Dashboard Makefile](https://github.com/kubeflow/kubeflow/blob/305393b0a543feeec6c1dc866ce2637ef1985a74/components/centraldashboard/Makefile)) for unambiguous container image provenance.
 
