@@ -5,7 +5,7 @@ JupyterHub-Fastbook
 <img src="https://jupyter.org/assets/main-logo.svg" width="110"> ➕
 <img src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png" height="140">
 
-Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container. 
+Taking [fast.ai's](https://www.fast.ai/) [Practical Deep Learning for Coders course](https://course.fast.ai/) [notebooks repository](https://github.com/fastai/fastbook) and putting it into a [Docker](https://www.docker.com/) container.
 ------------
 
 Pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencies (installed in a [`conda`](https://www.anaconda.com/) environment) for an all-in-one automated, repeatable deployment without any setup.
@@ -14,7 +14,7 @@ Pre-loaded with [Jupyter](https://jupyter.org/) and all the required dependencie
 ➕ <img src="https://jupyter.org/assets/hublogo.svg" width="200">
 
 
-For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster. 
+For those that lead a team, scale out by deploying the environment to multiple users at once via [JupyterHub](https://jupyter.org/hub), hosted on your own [Kubernetes](https://kubernetes.io/) cluster.
 ------------
 This is a standalone deployment which can be extended or used as-is for your own multi-user Jupyter workflows.
 
@@ -74,7 +74,7 @@ helm list
 helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
 helm repo update
 
-# Deploy the JupyterHub service mesh onto your Kubernetes cluster 
+# Deploy the JupyterHub service mesh onto your Kubernetes cluster
 # using the secret token you generated in step 1 and
 # specifying the Docker image tag you want to use,
 # i.e., `TAG=latest` or, even better, a specific tag such as `TAG=v20201007-7890c25`
@@ -308,8 +308,8 @@ make config.yaml
 This will create a `config.yaml` by populating fields of `config.TEMPLATE.yaml`
 with the pre-set deployment variables<sup>[†](#override-docker-env-var)</sup> and values specified in your `.env` file.
 
-<sup><a name="config-auto-regenerated-on-deploy">*</a> 
-Anything generated here will be overwritten by the following deployment 
+<sup><a name="config-auto-regenerated-on-deploy">*</a>
+Anything generated here will be overwritten by the following deployment
 step with the most recent values, but this step is here for completion's sake.</sup>
 
 
@@ -323,7 +323,7 @@ make deploy TAG=${YOUR_DESIRED_TAG}
 ```
 
 This will deploy the JupyterHub instance to your cluster via the
-[official Helm chart](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html#install-jupyterhub), 
+[official Helm chart](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html#install-jupyterhub),
 parametrized by pre-set deployment variables<sup>[†](#override-docker-env-var)</sup> and
 the `config.yaml` file you generated in the previous step.
 
@@ -350,11 +350,11 @@ the generated tag with your desired tag when deploying to your own cluster.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://images-na.ssl-images-amazon.com/images/I/516YvsJCS9L._SX379_BO1,204,203,200_.jpg" height="140">
 
-- **Practical Deep Learning for Coders**: the creators of `fastai` show you how to train a model on a wide range of tasks using `fastai` and PyTorch. 
+- **Practical Deep Learning for Coders**: the creators of `fastai` show you how to train a model on a wide range of tasks using `fastai` and PyTorch.
 You’ll also dive progressively further into deep learning theory to gain a complete understanding of the algorithms behind the scenes.
 
-    - [(Course)](https://course.fast.ai/) 
-    - [(Book)](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527) 
+    - [(Course)](https://course.fast.ai/)
+    - [(Book)](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527)
     - [(Notebook Repository)](https://github.com/fastai/fastbook)
 
 \
