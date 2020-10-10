@@ -255,8 +255,10 @@ echo "export GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}" >> .env
 #### Redeploy your JupyterHub instance
 
  ```shell script
-make config.yaml
-make deploy TAG=${YOUR_DESIRED_TAG}
+# Note: the `latest` tag is used here for expediency. When possible, you should
+# pin your version by specifying an exact Docker image tag,
+# e.g., `TAG=v20201007-7890c25`
+make deploy TAG=latest
 ```
 
 Now, the first time a user logs in to your JupyterHub instance,
