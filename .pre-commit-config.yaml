@@ -1,0 +1,33 @@
+---
+default_language_version:
+  python: python3.8
+repos:
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v0.14.3
+    hooks:
+      - id: detect-secrets
+        exclude: (poetry\.lock|\.sops\.yaml|\.enc\.env)$
+
+  - repo: https://github.com/Cielquan/poetry
+    rev: 5d361d9ac236624fffc1e7392422dad4b8c0b2b9
+    hooks:
+      # Check config file
+      - id: poetry-check
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.1.3
+    hooks:
+      - id: python-safety-dependencies-check
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: check-added-large-files  # Ignored for git-lfs files
+        args: [--maxkb=100000]  # 100MB
+      - id: debug-statements
+      - id: end-of-file-fixer  # Ensure files ONLY end in a newline
+        exclude_types: [jupyter]
+      - id: pretty-format-json  # Sort and indent
+        args: [--autofix]
+      - id: trailing-whitespace  # Trim
+        args: [--markdown-linebreak-ext=md]
