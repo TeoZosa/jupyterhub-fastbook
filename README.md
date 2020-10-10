@@ -28,7 +28,9 @@ Quickstart
 ==============================
 
 
-## <a name="docker-container-deployment">Running the Docker image locally</a>
+<a name="docker-container-deployment">Running the Docker image locally</a>
+------------
+
 
 ```shell script
 # Specify the Docker image tag you want to use,
@@ -47,7 +49,9 @@ Follow the directions on-screen to log in to your local Jupyter notebook environ
 
 <img src=".github/jupyter_notebook_fastbook_kernel_selection.png" width="600">
 
-## Deploying JupyterHub to your Kubernetes cluster
+Deploying JupyterHub to your Kubernetes cluster
+------------
+
 
 ###### Please see the [unabridged Kubernetes deployment section](#jupyterhub-kubernetes-deployment-overview) for an in-depth explanations of the below steps
 
@@ -117,7 +121,9 @@ tangible benefits
 why better than alternatives
 -->
 
-## Benefits<sup>[*](#assuming-technologies-installed)</sup>
+Benefits<sup>[*](#assuming-technologies-installed)</sup>
+------------
+
 
 1. ##### Immediately get started on the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/) without any extra setup via the `JupyterHub-Fastbook` Docker image<sup>[[1]](#jupyter-minimal-notebook)</sup>:
 2. ##### Deploy JupyterHub (with the `JupyterHub-Fastbook` Docker image):
@@ -134,7 +140,9 @@ why better than alternatives
 
 <sup><a name="jupyter-minimal-notebook">[1]</a> Based on the official [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html). This means you get the same features of a default JupyterHub deployment with the added functionality of an isolated `fastbook` `conda` environment.</sup>
 
-## Example Uses
+Example Uses
+------------
+
 
 Use `JupyterHub-Fastbook` in conjunction with the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/):
 1. To go through the course on your own
@@ -143,7 +151,9 @@ with virtually no setup by running the [`JupyterHub-Fastbook` Docker image local
 3. To onboard new junior members of your organization's AI/ML team
 4. Anything else you can think of!
 
-## Why This Project?
+Why This Project?
+------------
+
 
 The purpose of this project was to reduce any initial technical barriers to entry for
 the [fast.ai Practical Deep Learning for Coders course](https://course.fast.ai/)
@@ -174,7 +184,9 @@ Advanced Usage:
 ==============================
 
 
-## Makefile overview:  
+Makefile overview:  
+------------
+
 
 ##### Available rules:
 
@@ -187,14 +199,18 @@ Advanced Usage:
 Tip: invoking `make` without any arguments will display auto-generated
 documentation similar to the above.  
 
-## Build and push your own Docker image
+Build and push your own Docker image
+------------
+
 
 In addition to deployment, the `makefile` contains facilities to build and push
 Docker images to your own repository. Simply edit the appropriate fields in `Makefile`
 and invoke `make` with one of: `build`, `push`.
 
 
-## Enabling GitHub Oauth<sup>[[2]](#jupyterhub-documentation-oauth2)</sup>:
+Enabling GitHub Oauth<sup>[[2]](#jupyterhub-documentation-oauth2)</sup>:
+------------
+
 
 #### Determine your JupyterHub host address (the address you use in your browser to access JupyterHub) and add it to your `.env` file:
 ```shell script
@@ -235,7 +251,9 @@ GitHub's Oauth whenever they log in.
 ==============================
 
 
-## Setup:
+Setup:
+------------
+
 
 source: [JupyterHub documentation: Setting up JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html#setting-up-jupyterhub)
 
@@ -271,7 +289,9 @@ helm repo update
 ```
 
 
-## Deployment:
+Deployment:
+------------
+
 
 source: [JupyterHub documentation: Setting up JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/setup-jupyterhub/setup-jupyterhub.html)
 
