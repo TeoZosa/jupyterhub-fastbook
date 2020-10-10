@@ -374,8 +374,7 @@ the generated tag with your desired tag when deploying to your own cluster.
 ==============================
 
 
-[`fast.ai`](https://www.fast.ai/): A non-profit research group focused on deep learning and artificial intelligence.
-------------
+### [`fast.ai`](https://www.fast.ai/): A non-profit research group focused on deep learning and artificial intelligence.
 -  [`fastai`](https://github.com/fastai/fastai): The free, open-source software library from fast.ai that simplifies training fast and accurate neural nets using modern best practices.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -393,29 +392,25 @@ You’ll also dive progressively further into deep learning theory to gain a com
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://jupyter.org/assets/main-logo.svg" width="100">
 
-[`Jupyter Notebook`](https://jupyter.org/hub): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
-------------
+### [`Jupyter Notebook`](https://jupyter.org/hub): An open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 
 \
 \
 <img src="https://jupyter.org/assets/hublogo.svg" width="200">
 
-[`JupyterHub`](https://jupyter.org/hub): A multi-user version of the notebook designed for companies, classrooms and research labs
-------------
+### [`JupyterHub`](https://jupyter.org/hub): A multi-user version of the notebook designed for companies, classrooms and research labs
 
 \
 \
 <img src="https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png" width="200">
 
-[`Anaconda`](https://jupyter.org/hub) (`conda` for short): A free and open-source distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment.
-------------
+### [`Anaconda`](https://jupyter.org/hub) (`conda` for short): A free and open-source distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment.
 
 \
 \
 <img src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" width="200">
 
-[`Docker`](https://www.docker.com/): A set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers.
-------------
+### [`Docker`](https://www.docker.com/): A set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers.
 
 - A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
@@ -423,5 +418,4 @@ You’ll also dive progressively further into deep learning theory to gain a com
 \
 <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" width="300">
 
-[`Kubernetes`](https://kubernetes.io/): An open-source system for automating deployment, scaling, and management of containerized applications.
-------------
+### [`Kubernetes`](https://kubernetes.io/): An open-source system for automating deployment, scaling, and management of containerized applications.
