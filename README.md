@@ -20,13 +20,6 @@ This is a standalone deployment which can be extended or used as-is for your own
 
 *See the [Further Reading](#further-reading) section for more details on the above mentioned technologies.
 
-
-Disclaimer
-------------
-
-Neither I nor my employer are affiliated in any way with fast.ai, Project Jupyter,
-or any other organizations responsible for any of the technologies used in this project.
-
 ------------
 
 Table of Contents
@@ -415,3 +408,9 @@ You’ll also dive progressively further into deep learning theory to gain a com
 <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" width="300">
 
 ### [`Kubernetes`](https://kubernetes.io/): An open-source system for automating deployment, scaling, and management of containerized applications.
+
+Disclaimer
+------------
+
+Neither I nor my employer are affiliated in any way with fast.ai, Project Jupyter,
+or any other organizations responsible for any of the technologies used in this project.
