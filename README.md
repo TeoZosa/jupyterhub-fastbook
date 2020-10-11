@@ -26,8 +26,8 @@ Table of Contents
 <!-- toc -->
 
 - [Quickstart](#quickstart)
-  * [Running the Docker image locally](#running-the-docker-image-locally)
-  * [Deploying JupyterHub to your Kubernetes cluster](#deploying-jupyterhub-to-your-kubernetes-cluster)
+  * [Running The Docker Image Locally](#running-the-docker-image-locally)
+  * [Deploying JupyterHub to Your Kubernetes Cluster](#deploying-jupyterhub-to-your-kubernetes-cluster)
 - [Overview](#overview)
   * [Benefits](#benefits)
   * [Example Uses](#example-uses)
@@ -57,7 +57,7 @@ Quickstart
 ==============================
 
 
-<a name="docker-container-deployment">Running the Docker image locally</a>
+<a name="docker-container-deployment">Running The Docker Image Locally</a>
 ------------
 
 
@@ -79,7 +79,7 @@ Follow the directions on-screen to log in to your local Jupyter notebook environ
 
 <img src=".github/jupyter_notebook_fastbook_kernel_selection.png" width="600">
 
-Deploying JupyterHub to your Kubernetes cluster
+Deploying JupyterHub to Your Kubernetes Cluster
 ------------
 
 
