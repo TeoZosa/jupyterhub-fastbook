@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:experimental
 FROM jupyter/minimal-notebook:6d42503c684f
-LABEL maintainer="SonoSim Inc. <teo@sonosim.com>"
+LABEL maintainer="Teofilo Zosa <teo@sonosim.com>"
 ENV LANG C.UTF-8
 
 # Configure bash as the default shell
