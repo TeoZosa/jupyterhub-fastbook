@@ -122,7 +122,7 @@ auth:
   type: github
   github:
     clientId: "$(strip $(GITHUB_CLIENT_ID))"
-    clientSecret: "$(strip $(GITHUB_CLIENT_SECRET))"
+    clientSecret: "$(strip $(GITHUB_CLIENT_SECRET))"  # pragma: allowlist secret
     callbackUrl: "http://$(strip $(JUPYTERHUB_IP))/hub/oauth_callback"
 endef
 # If all GitHub Oauth sections defined, include in template
